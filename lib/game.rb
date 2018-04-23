@@ -13,4 +13,8 @@ class Game
     @std_in.read
   end
 
+  def choose
+    ["r", "p", "s"].sample
+  end
+
 end

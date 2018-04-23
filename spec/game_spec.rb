@@ -5,6 +5,7 @@ describe Game do
   subject { Game.new(stdout_mock, stdin_mock)}
   let(:stdout_mock) { double() }
   let(:stdin_mock) { double() }
+  let(:choice) { double() }
 
   context "#prompt" do
     it "It prompts the user to select a weapon" do
@@ -23,6 +24,15 @@ describe Game do
 
       # act
       expect(subject.select).to eq("r")
+    end
+  end
+
+  context "#choose" do
+    it "lets the Computer make a choice" do
+      #arrange
+      srand(1)
+      #act
+      expect(subject.choose).to eq("p")
     end
   end
 
